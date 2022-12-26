@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="left">
+            <div class="logo">
+                <img src="/Assets/logo.png" alt="" />
+            </div>
+            <div class="search-box">
+                <div class="input-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search Store">
+                </div>
+            </div>
+            <div class="navi-links">
+                <ul>
+                    <li><a href="#">Discover</a></li>
+                    <li><a href="#">Browse</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="navi-links">
+                <ul>
+                    <li><a href="#">Cart</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <main>
+        <section id="feature">
+            <div class="main-display">
+                <img id="display-img" src="/Assets/features/feature_1.jpg" alt="">
+                <div class="captions">
+                    <img id="caption-logo" src="/Assets/features/feature_1_logo.png" alt="">
+                    <p class="sub">Buy Now</p>
+                    <p>
+                        Spider-Man: Miles Morales is a superhero game based on the popular Marvel Comics character of
+                        the same name.
+                    </p>
+                    <button>Open</button>
+                </div>
+            </div>
+            <div class="indicators">
+                <div id="indicator-1" class="indicator-item">
+                    <div class="progress-bar">
+                        <div class="icon-logo">
+                            <img src="/Assets/features/feature_1_indi.jpg" alt="">
+                        </div>
+                        Spider-Man: Miles Morales
+                    </div>
+                </div>
+                <div id="indicator-2" class="indicator-item">
+                    <div class="progress-bar">
+                        <div class="icon-logo">
+                            <img src="/Assets/features/feature_2_indi.jpg" alt="">
+                        </div>
+                        Gamehub Coupons
+                    </div>
+                </div>
+                <div id="indicator-3" class="indicator-item">
+                    <div class="progress-bar">
+                        <div class="icon-logo">
+                            <img src="/Assets/features/feature_3_indi.jpg" alt="">
+                        </div>
+                        Crime boss
+                    </div>
+                </div>
+                <div id="indicator-4" class="indicator-item">
+                    <div class="progress-bar">
+                        <div class="icon-logo">
+                            <img src="/Assets/features/feature_4_indi.jpg" alt="">
+                        </div>
+                        The Callisto Protocols
+                    </div>
+                </div>
+                <div id="indicator-5" class="indicator-item">
+                    <div class="progress-bar">
+                        <div class="icon-logo">
+                            <img src="/Assets/features/feature_5_indi.jpg" alt="">
+                        </div>
+                        Holyday Sell
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    let i = 2
+    document.getElementById(`indicator-1`).classList.add("active");
+    setInterval(() => {
+        var indiItem = document.getElementById(`indicator-${i}`);
+        indiItem.classList.add("active")
+
+        document.getElementById(`indicator-1`).classList.remove("active");
+
+        document.querySelector(`#display-img`).src = `/Assets/features/feature_${i}.jpg`;
+        document.querySelector(`#caption-logo`).src = `/Assets/features/feature_${i}_logo.png`;
+
+        setTimeout(() => {
+            i += 1
+            indiItem.classList.remove("active")
+            if (i == 6) {
+                i = 1
+            }
+        }, 5000)
+
+    }, 5000)
+</script>
+
+</html>
